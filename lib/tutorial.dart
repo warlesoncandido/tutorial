@@ -9,7 +9,8 @@ export './models/shape_models.dart';
 export './models/tutorial_itens.dart';
 
 class Tutorial {
-  static showOverlay(BuildContext context, List<TutorialItens> children) async {
+  static showTutorial(
+      BuildContext context, List<TutorialItens> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
     OverlayState overlayState = Overlay.of(context);

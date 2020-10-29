@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         key: _keyFloat,
         onPressed: () {
-          Tutorial.showOverlay(context, itens);
+          Tutorial.showTutorial(context, itens);
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
