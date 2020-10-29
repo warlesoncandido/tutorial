@@ -1,8 +1,8 @@
 name: tutorial
 description: Tutorial package.
-version: 0.0.1
-author: Warleson Candido
-homepage:
+version: 1.0.0
+author:
+homepage: https://github.com/warlesoncandido
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
