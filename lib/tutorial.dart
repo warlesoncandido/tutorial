@@ -30,7 +30,9 @@ class Tutorial {
                       shapeFocus: element.shapeFocus,
                       dx: offset.dx + (sizeWidget.width / 2),
                       dy: offset.dy + (sizeWidget.height / 2),
-                      radius: sizeWidget.width + sizeWidget.height,
+                      radius: sizeWidget.width < sizeWidget.height
+                          ? sizeWidget.height
+                          : sizeWidget.width,
                     ),
                   ),
                   ...element.children,
