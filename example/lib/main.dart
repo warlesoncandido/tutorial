@@ -33,11 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   var _keyFloat = GlobalKey();
   var _keyText = GlobalKey();
+  var keyList = GlobalKey();
   List<TutorialItens> itens = [];
 
   @override
   void initState() {
     itens = [
+      TutorialItens(
+          globalKey: keyList,
+          shapeFocus: ShapeFocus.square,
+          alignmentWidgetNextFocus: Alignment.bottomCenter,
+          children: [],
+          clicknextFocusWidget: Icon(
+            Icons.arrow_right,
+            color: Colors.white,
+          )),
       TutorialItens(
           globalKey: _keyFloat,
           shapeFocus: ShapeFocus.oval,
@@ -114,6 +124,21 @@ class _MyHomePageState extends State<MyHomePage> {
               key: _keyText,
               style: Theme.of(context).textTheme.headline4,
             ),
+            Container(
+              height: 100,
+              child: ListView.builder(
+                key: keyList,
+                scrollDirection: Axis.horizontal,
+                itemCount: 15,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 70,
+                    color: Colors.red,
+                    padding: EdgeInsets.all(2),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),

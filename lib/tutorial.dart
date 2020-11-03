@@ -28,11 +28,11 @@ class Tutorial {
                   CustomPaint(
                     size: size,
                     painter: HolePainter(
-                      shapeFocus: element.shapeFocus,
-                      dx: offset.dx + (sizeWidget.width / 2),
-                      dy: offset.dy + (sizeWidget.height / 2),
-                      radius: sizeWidget.width,
-                    ),
+                        shapeFocus: element.shapeFocus,
+                        dx: offset.dx + (sizeWidget.width / 2),
+                        dy: offset.dy + (sizeWidget.height / 2),
+                        width: sizeWidget.width,
+                        height: sizeWidget.height),
                   ),
                   ...element.children,
                   Align(

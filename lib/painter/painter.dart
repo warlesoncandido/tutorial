@@ -4,13 +4,15 @@ import 'package:tutorial/models/shape_models.dart';
 class HolePainter extends CustomPainter {
   final double dx;
   final double dy;
-  final double radius;
+  final double width;
+  final double height;
   final ShapeFocus shapeFocus;
 
   HolePainter({
     this.dx,
     this.dy,
-    this.radius,
+    this.width,
+    this.height,
     this.shapeFocus = ShapeFocus.oval,
   });
   @override
@@ -22,8 +24,7 @@ class HolePainter extends CustomPainter {
             PathOperation.difference,
             Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height)),
             Path()
-              ..addOval(
-                  Rect.fromCircle(center: Offset(dx, dy), radius: radius - 30))
+              ..addOval(Rect.fromCircle(center: Offset(dx, dy), radius: width))
               ..close(),
           ),
           paint);
@@ -33,8 +34,8 @@ class HolePainter extends CustomPainter {
             PathOperation.difference,
             Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height)),
             Path()
-              ..addRect(
-                  Rect.fromCircle(center: Offset(dx, dy), radius: radius - 30))
+              ..addRect(Rect.fromLTWH(
+                  dx - (width / 2), dy - (height / 2), width, height))
               ..close(),
           ),
           paint);
