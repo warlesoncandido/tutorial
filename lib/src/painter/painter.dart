@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tutorial/models/shape_models.dart';
+import 'package:tutorial/src/models/shape_models.dart';
 
 class HolePainter extends CustomPainter {
   final double dx;
