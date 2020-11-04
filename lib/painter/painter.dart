@@ -17,7 +17,7 @@ class HolePainter extends CustomPainter {
   });
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = Colors.black54;
+    final paint = Paint()..color = Color.fromRGBO(0, 0, 0, 0.8);
     if (shapeFocus == ShapeFocus.oval) {
       canvas.drawPath(
           Path.combine(
