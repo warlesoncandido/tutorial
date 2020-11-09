@@ -42,44 +42,40 @@ class _MyHomePageState extends State<MyHomePage> {
       TutorialItens(
           globalKey: keyList,
           shapeFocus: ShapeFocus.square,
-          alignmentWidgetNextFocus: Alignment.bottomCenter,
+          bottom: 167,
+          left: 30,
           children: [],
-          clicknextFocusWidget: Icon(
+          widgetNext: Icon(
             Icons.arrow_right,
             color: Colors.white,
           )),
       TutorialItens(
           globalKey: _keyFloat,
           shapeFocus: ShapeFocus.oval,
-          alignmentWidgetNextFocus: Alignment.bottomCenter,
+          bottom: 167,
+          left: 30,
           children: [
-            Positioned(
-              bottom: 100,
-              left: 40,
-              child: Text(
-                "Botão de incrementar",
-                style: TextStyle(
-                    fontSize: 23,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
+            Text(
+              "Botão de incrementar",
+              style: TextStyle(
+                  fontSize: 23,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
-            Positioned(
-                bottom: 150,
-                left: 40,
-                child: Icon(
-                  Icons.star,
-                  color: Colors.yellowAccent,
-                ))
+            Icon(
+              Icons.star,
+              color: Colors.yellowAccent,
+            )
           ],
-          clicknextFocusWidget: Icon(
+          widgetNext: Icon(
             Icons.arrow_right,
             color: Colors.white,
           )),
       TutorialItens(
         globalKey: _keyText,
-        alignmentWidgetNextFocus: Alignment.bottomCenter,
         shapeFocus: ShapeFocus.oval,
+        bottom: 167,
+        left: 30,
         children: [
           Positioned(
             top: 400,

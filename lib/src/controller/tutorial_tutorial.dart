@@ -30,26 +30,31 @@ class Tutorial {
                         width: sizeWidget.width,
                         height: sizeWidget.height),
                   ),
-                  ...element.children,
-                  Align(
-                    alignment: element.alignmentWidgetNextFocus ??
-                        Alignment.bottomCenter,
-                    child: Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: GestureDetector(
-                        child: element.clicknextFocusWidget ??
-                            Text(
-                              "NEXT",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                        onTap: () {
-                          entrys[count].remove();
-                          count++;
-                          if (count != entrys.length) {
-                            overlayState.insert(entrys[count]);
-                          }
-                        },
-                      ),
+                  Positioned(
+                    top: element.top,
+                    bottom: element.bottom,
+                    left: element.left,
+                    right: element.right,
+                    child: Column(
+                      crossAxisAlignment: element.crossAxisAlignment,
+                      mainAxisAlignment: element.mainAxisAlignment,
+                      children: [
+                        ...element.children,
+                        GestureDetector(
+                          child: element.widgetNext ??
+                              Text(
+                                "NEXT",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                          onTap: () {
+                            entrys[count].remove();
+                            count++;
+                            if (count != entrys.length) {
+                              overlayState.insert(entrys[count]);
+                            }
+                          },
+                        ),
+                      ],
                     ),
                   )
                 ],
