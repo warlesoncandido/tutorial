@@ -1,11 +1,5 @@
 
-## [1.0.1] - Alterando nome da funcao.
 
-* Alterando nome da funcao.
-
-## [1.0.0] - TODO: Add release date.
-
-* Colocando author.
 
 ## [0.0.1] - TODO: Add release date.
 
@@ -14,3 +8,7 @@
 ## [0.0.2] - Simplifying widget.
 
 * Simplifying widget.
+
+## [0.0.3] - Enabling touch function on the screen.
+
+* Enabling touch function on the screen.

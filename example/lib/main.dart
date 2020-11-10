@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     itens = [
       TutorialItens(
           globalKey: keyList,
+          touchScreen: true,
           shapeFocus: ShapeFocus.square,
           bottom: 167,
           left: 30,
@@ -51,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )),
       TutorialItens(
           globalKey: _keyFloat,
+          touchScreen: true,
           shapeFocus: ShapeFocus.oval,
           bottom: 167,
           left: 30,
