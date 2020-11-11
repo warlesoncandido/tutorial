@@ -13,7 +13,10 @@
 
 * Enabling touch function on the screen.
 
-## [0.0.4] - 
-changing component size.
+## [0.0.4] - changing component size.
 
 * Enabling touch function on the screen.
+
+## [0.0.5] - Readme.
+
+* Enabling readme.
