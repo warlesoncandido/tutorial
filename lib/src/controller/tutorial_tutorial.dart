@@ -45,26 +45,29 @@ class Tutorial {
                       bottom: element.bottom,
                       left: element.left,
                       right: element.right,
-                      child: Column(
-                        crossAxisAlignment: element.crossAxisAlignment,
-                        mainAxisAlignment: element.mainAxisAlignment,
-                        children: [
-                          ...element.children,
-                          GestureDetector(
-                            child: element.widgetNext ??
-                                Text(
-                                  "NEXT",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                            onTap: () {
-                              entrys[count].remove();
-                              count++;
-                              if (count != entrys.length) {
-                                overlayState.insert(entrys[count]);
-                              }
-                            },
-                          ),
-                        ],
+                      child: Container(
+                        width: size.width * 0.8,
+                        child: Column(
+                          crossAxisAlignment: element.crossAxisAlignment,
+                          mainAxisAlignment: element.mainAxisAlignment,
+                          children: [
+                            ...element.children,
+                            GestureDetector(
+                              child: element.widgetNext ??
+                                  Text(
+                                    "NEXT",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                              onTap: () {
+                                entrys[count].remove();
+                                count++;
+                                if (count != entrys.length) {
+                                  overlayState.insert(entrys[count]);
+                                }
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],

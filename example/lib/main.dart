@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Tutorial '),
     );
   }
 }
@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.white,
           )),
       TutorialItens(
+          crossAxisAlignment: CrossAxisAlignment.center,
           globalKey: _keyFloat,
           touchScreen: true,
           shapeFocus: ShapeFocus.oval,
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           left: 30,
           children: [
             Text(
-              "Botão de incrementar",
+              "Botão de incrementarBotão de incrementarBotão de incrementarBotão de incrementarBotão de incrementarBotão de incrementarBotão de incrementar",
               style: TextStyle(
                   fontSize: 23,
                   color: Colors.white,

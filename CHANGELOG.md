@@ -12,3 +12,8 @@
 ## [0.0.3] - Enabling touch function on the screen.
 
 * Enabling touch function on the screen.
+
+## [0.0.4] - 
+changing component size.
+
+* Enabling touch function on the screen.
