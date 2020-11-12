@@ -11,7 +11,7 @@ Created to present screens in a very cool way
 
 **Screens**
  
-<img src= "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.17.png?token=ALOCTXZQFGE7BYDMIG2OGQ27VRHGU">
+<img src= "https://github.com/warlesoncandido/images/blob/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.17.png?raw=true">
 <br><br>
 <img src= "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.33.png?token=ALOCTXZR4UEGVB66QWGRHX27VRHL4">
 <br><br>
