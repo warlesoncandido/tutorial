@@ -24,3 +24,7 @@
 ## [0.0.6] - Readme.
 
 * Arrumando exemplo e readme
+
+## [0.0.7] - Readme.
+
+* Arrumando exemplo e readme

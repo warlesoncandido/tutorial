@@ -1,9 +1,13 @@
 # Tutorial
 
-![WhatsApp Image 2021-01-27 at 08 52 53](https://user-images.githubusercontent.com/47983071/105987554-30276a00-607d-11eb-9f0f-69acfad9e8f8.jpeg)
-![WhatsApp Image 2021-01-27 at 08 52 52 (1)](https://user-images.githubusercontent.com/47983071/105987620-4cc3a200-607d-11eb-958c-a5645bba87fb.jpeg)
+<img src="https://user-images.githubusercontent.com/47983071/105987554-30276a00-607d-11eb-9f0f-69acfad9e8f8.jpeg" alt="drawing" width="200"/>
 
-![WhatsApp Image 2021-01-27 at 08 52 52](https://user-images.githubusercontent.com/47983071/105987668-5a792780-607d-11eb-9d74-6bd190c0aad2.jpeg)
+<img src="https://user-images.githubusercontent.com/47983071/105987620-4cc3a200-607d-11eb-958c-a5645bba87fb.jpeg" alt="drawing" width="200"/>
+
+
+<img src="https://user-images.githubusercontent.com/47983071/105987668-5a792780-607d-11eb-9d74-6bd190c0aad2.jpeg" alt="drawing" width="200"/>
+
+
 Use the tutorial package is easy.
 
 First create the global keys and add for the components you want to present:
