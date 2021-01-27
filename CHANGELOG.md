@@ -19,4 +19,8 @@
 
 ## [0.0.5] - Readme.
 
-* Enabling readme.
+* Arrumando exemplo e readme
+
+## [0.0.5+1] - Readme.
+
+* Arrumando exemplo e readme
