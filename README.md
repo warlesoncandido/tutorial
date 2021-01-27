@@ -1,51 +1,114 @@
-<h1>Tutorial</h1>
+# Tutorial
 
+![WhatsApp Image 2021-01-27 at 08 52 53](https://user-images.githubusercontent.com/47983071/105987554-30276a00-607d-11eb-9f0f-69acfad9e8f8.jpeg)
+![WhatsApp Image 2021-01-27 at 08 52 52 (1)](https://user-images.githubusercontent.com/47983071/105987620-4cc3a200-607d-11eb-958c-a5645bba87fb.jpeg)
 
-Created to present screens in a very cool way
+![WhatsApp Image 2021-01-27 at 08 52 52](https://user-images.githubusercontent.com/47983071/105987668-5a792780-607d-11eb-9d74-6bd190c0aad2.jpeg)
+Use the tutorial package is easy.
 
-**Installation**
- - Add to pubspec.yaml :
-     - tutorial:^1.0.4
- - Import
- 	- import 'package:tutorial/tutorial.dart';
+First create the global keys and add for the components you want to present:
+```
+final keyMenu = GlobalKey();
+final keyContainer = GlobalKey();
+final keyChat = GlobalKey();  
+```
 
-**Screens**
- 
-<img src= "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.17.png?token=ALOCTXZQFGE7BYDMIG2OGQ27VRHGU">
-<br><br>
-<img src= "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.33.png?token=ALOCTXZR4UEGVB66QWGRHX27VRHL4">
-<br><br>
-<img src= "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.43.png?token=ALOCTX4EZYJFB2ZZPHKOQHS7VRHN4">
-<br><br>
-<img src= "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2012.12.54.png?token=ALOCTXYPHRGFGPWLPIYLMF27VRHP6">
+Then create a list of TutorialItens
 
+```
+List<TutorialItens> itens = [];
+@override
+  void initState() {
+    itens.addAll({
+      TutorialItens(
+          globalKey: keyMenu,
+          touchScreen: true,
+          top: 200,
+          left: 50,
+          children: [
+            Text(
+              "Ali é nosso menu , você consegue ver varias coisas nele",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            SizedBox(
+              height: 100,
+            )
+          ],
+          widgetNext: Text(
+            "Toque para continuar",
+            style: TextStyle(
+              color: Colors.purple,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          shapeFocus: ShapeFocus.oval),
+      TutorialItens(
+        globalKey: keyChat,
+        touchScreen: true,
+        top: 200,
+        left: 50,
+        children: [
+          Text(
+            "Qualquer duvida que aparecer , entre no nosso chat , estamos prontos para ajudar",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 100,
+          )
+        ],
+        widgetNext: Text(
+          "Toque para continuar",
+          style: TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shapeFocus: ShapeFocus.oval,
+      ),
+      TutorialItens(
+        globalKey: keyContainer,
+        touchScreen: true,
+        bottom: 50,
+        left: 50,
+        children: [
+          Text(
+            "Nessa sessão você vai ter acesso a todas as  Rasteirinhas",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 10,
+          )
+        ],
+        widgetNext: Text(
+          "Sair",
+          style: TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shapeFocus: ShapeFocus.square,
+      ),
+    });
+    super.initState();
+  }
+```
 
-<h2>Properties</h2>
-- globalKey : Unique key of the component you want
-- touchScreen: boolean that validates if the touch for the next screen will be on the entire screen
-- children: List of widgets
-- crossAxisAligment : Vertical alignment
-- mainAxisAlignment :  Horizontal alignment
-- top :top alignment
-- bottom : bottom alignment
-- left :  Left alignment
-- right :  Right alignment
+ #### In it we have TutorialItens, is where is the entire tutorial part of your application.
+**TutorialItens**
+  - **globalKey**  - The Global Key of the component you want to focus on
+  - **touchScreen** - Sets whether to move to the next tutorial items by clicking anywhere on the screen
+  - **children** - List of widgets to compose the screen
+  - **widgetNext** - A component to move to the next item, if touchScreen is equal to false, the click will be only on that component
+  - **shapeFocus** -Focus shape can be chosen using **shapeFocus.oval** or **ShapeFocus.square**
+  - Can be aligned on the screen as well as positioned using **(top, bottom, left, right)**
 
-<h2>how to use</h2>
+**Tutorial.show(context,itens)**
+show() -   the show () method, receives two parameters, the context and the list of TutorialItens you created
+Now just run the Tutorial.show(context, itens)
 
- - Create the GlobalsKeys of the components you want
- <img  src = "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2018.19.59.png?token=ALOCTXZUC7M462FGY4RUDTK7VRLQM">
- 
- - Create List<TutorialItens>
- <img  src = "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2018.20.35.png?token=ALOCTX6ITT563UU2X65U6L27VRLWS">
- 
- - Create List<TutorialItens>
- <img  src = "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2018.20.35.png?token=ALOCTX6ITT563UU2X65U6L27VRLWS">
- 
-- In the initState add the TutorialItens
- <img  src = "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2018.21.05.png?token=ALOCTX6WOPAEGG5CEXCJZ6C7VRL4G">
- 
-- Call the showTutorial function passing the context and the list of TurialItens as parameters
- <img  src = "https://raw.githubusercontent.com/warlesoncandido/images/master/images/Captura%20de%20Tela%202020-11-11%20%C3%A0s%2018.22.28.png?token=ALOCTXZFVEQMG3PGBLTUSFK7VRMBY">
- 
+```
+Tutorial.showTutorial(context, itens);
+```
+
+# Good job now is so use.
  

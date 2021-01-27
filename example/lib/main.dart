@@ -1,107 +1,113 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:tutorial/tutorial.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      iconTheme: IconThemeData(
+        color: Colors.black,
       ),
-      home: MyHomePage(title: 'Tutorial '),
-    );
-  }
+    ),
+    home: Home(),
+  ));
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class Home extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  var _keyFloat = GlobalKey();
-  var _keyText = GlobalKey();
-  var keyList = GlobalKey();
+class _HomeState extends State<Home> {
+  List list = [
+    {"url": "assets/images/sandalia.jpg", "x": 2, "y": 2},
+    {"url": "assets/images/saltos.jpg", "x": 1, "y": 1},
+    {"url": "assets/images/rasteirinha.jpg", "x": 1, "y": 1}
+  ];
+
+  var keyMenu = GlobalKey();
+  var keyContainer = GlobalKey();
+  var keyChat = GlobalKey();
+
   List<TutorialItens> itens = [];
 
   @override
   void initState() {
-    itens = [
+    itens.addAll({
       TutorialItens(
-          globalKey: keyList,
+          globalKey: keyMenu,
           touchScreen: true,
-          shapeFocus: ShapeFocus.square,
-          bottom: 167,
-          left: 30,
-          children: [],
-          widgetNext: Icon(
-            Icons.arrow_right,
-            color: Colors.white,
-          )),
-      TutorialItens(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          globalKey: _keyFloat,
-          touchScreen: true,
-          shapeFocus: ShapeFocus.oval,
-          bottom: 167,
-          left: 30,
+          top: 200,
+          left: 50,
           children: [
             Text(
-              "Botão de incrementarBotão de incrementarBotão de incrementarBotão de incrementarBotão de incrementarBotão de incrementarBotão de incrementar",
-              style: TextStyle(
-                  fontSize: 23,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+              "Ali é nosso menu , você consegue ver varias coisas nele",
+              style: TextStyle(color: Colors.white, fontSize: 20),
             ),
-            Icon(
-              Icons.star,
-              color: Colors.yellowAccent,
+            SizedBox(
+              height: 100,
             )
           ],
-          widgetNext: Icon(
-            Icons.arrow_right,
-            color: Colors.white,
-          )),
-      TutorialItens(
-        globalKey: _keyText,
-        shapeFocus: ShapeFocus.oval,
-        bottom: 167,
-        left: 30,
-        children: [
-          Positioned(
-            top: 400,
-            left: 100,
-            child: Column(
-              children: [
-                Text(
-                  "Texto incrementado",
-                  style: TextStyle(
-                      fontSize: 23,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-                Icon(
-                  Icons.confirmation_number,
-                  color: Colors.red,
-                )
-              ],
+          widgetNext: Text(
+            "Toque para continuar",
+            style: TextStyle(
+              color: Colors.purple,
+              fontWeight: FontWeight.bold,
             ),
+          ),
+          shapeFocus: ShapeFocus.oval),
+      TutorialItens(
+        globalKey: keyChat,
+        touchScreen: true,
+        top: 200,
+        left: 50,
+        children: [
+          Text(
+            "Qualquer duvida que aparecer , entre no nosso chat , estamos prontos para ajudar",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 100,
           )
         ],
+        widgetNext: Text(
+          "Toque para continuar",
+          style: TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shapeFocus: ShapeFocus.oval,
       ),
-    ];
+      TutorialItens(
+        globalKey: keyContainer,
+        touchScreen: true,
+        bottom: 50,
+        left: 50,
+        children: [
+          Text(
+            "Nessa sessão você vai ter acesso a todas as  Rasteirinhas",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          SizedBox(
+            height: 10,
+          )
+        ],
+        widgetNext: Text(
+          "Sair",
+          style: TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        shapeFocus: ShapeFocus.square,
+      ),
+    });
+    Future.delayed(Duration(microseconds: 200)).then((value) {
+      Tutorial.showTutorial(context, itens);
+    });
+
     super.initState();
   }
 
@@ -109,46 +115,75 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              key: _keyText,
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Container(
-              height: 100,
-              child: ListView.builder(
-                key: keyList,
-                scrollDirection: Axis.horizontal,
-                itemCount: 15,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 70,
-                    color: Colors.red,
-                    padding: EdgeInsets.all(2),
-                  );
-                },
-              ),
-            )
-          ],
+        leading: Icon(
+          Icons.menu,
+          key: keyMenu,
         ),
+        elevation: 0,
+        iconTheme: IconTheme.of(context),
+        centerTitle: true,
+        title: Text(
+          "DAKITA",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        actions: [
+          Container(
+            key: keyChat,
+            margin: EdgeInsets.symmetric(horizontal: 5),
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Icon(
+                Icons.chat_rounded,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        key: _keyFloat,
-        onPressed: () {
-          Tutorial.showTutorial(context, itens);
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Stack(
+        children: [
+          Background(),
+          StaggeredGridView.countBuilder(
+            crossAxisCount: 2,
+            itemCount: list.length,
+            crossAxisSpacing: 2,
+            mainAxisSpacing: 2,
+            itemBuilder: (BuildContext context, int index) => new Container(
+              key: index == 0 ? keyContainer : null,
+              child: Image.asset(
+                list[index]["url"],
+                fit: BoxFit.cover,
+              ),
+            ),
+            staggeredTileBuilder: (int index) =>
+                new StaggeredTile.count(list[index]["x"], list[index]["y"]),
+          )
+        ],
+      ),
+      drawer: Drawer(),
+    );
+  }
+}
+
+class Background extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+        colors: [
+          Color.fromRGBO(44, 191, 224, 1),
+          Color.fromRGBO(129, 71, 243, 1),
+        ],
+      )),
     );
   }
 }
