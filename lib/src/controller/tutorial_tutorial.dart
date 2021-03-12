@@ -1,29 +1,29 @@
 library tutorial;
 
 import 'package:flutter/material.dart';
-import 'package:tutorial/src/models/tutorial_itens.dart';
+import 'package:tutorial/src/models/tutorial_items.dart';
 import 'package:tutorial/src/painter/painter.dart';
 
 class Tutorial {
   static showTutorial(
-      BuildContext context, List<TutorialItens> children) async {
+      BuildContext context, List<TutorialItems> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
     OverlayState overlayState = Overlay.of(context);
-    List<OverlayEntry> entrys = [];
+    List<OverlayEntry> entries = [];
     children.forEach((element) async {
       var offset = _capturePositionWidget(element.globalKey);
       var sizeWidget = _getSizeWidget(element.globalKey);
-      entrys.add(
+      entries.add(
         OverlayEntry(
           builder: (context) {
             return GestureDetector(
               onTap: element.touchScreen == true
                   ? () {
-                      entrys[count].remove();
+                      entries[count].remove();
                       count++;
-                      if (count != entrys.length) {
-                        overlayState.insert(entrys[count]);
+                      if (count != entries.length) {
+                        overlayState.insert(entries[count]);
                       }
                     }
                   : () {},
@@ -38,7 +38,9 @@ class Tutorial {
                           dx: offset.dx + (sizeWidget.width / 2),
                           dy: offset.dy + (sizeWidget.height / 2),
                           width: sizeWidget.width,
-                          height: sizeWidget.height),
+                          height: sizeWidget.height,
+                          color: element.color
+                      ),
                     ),
                     Positioned(
                       top: element.top,
@@ -59,10 +61,10 @@ class Tutorial {
                                     style: TextStyle(color: Colors.white),
                                   ),
                               onTap: () {
-                                entrys[count].remove();
+                                entries[count].remove();
                                 count++;
-                                if (count != entrys.length) {
-                                  overlayState.insert(entrys[count]);
+                                if (count != entries.length) {
+                                  overlayState.insert(entries[count]);
                                 }
                               },
                             ),
@@ -79,7 +81,7 @@ class Tutorial {
       );
     });
 
-    overlayState.insert(entrys[0]);
+    overlayState.insert(entries[0]);
   }
 
   static Offset _capturePositionWidget(GlobalKey key) {

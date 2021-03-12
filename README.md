@@ -8,30 +8,31 @@
 <img src="https://user-images.githubusercontent.com/47983071/105987668-5a792780-607d-11eb-9d74-6bd190c0aad2.jpeg" alt="drawing" width="200"/>
 
 
-Use the tutorial package is easy.
+## Usage
 
-First create the global keys and add for the components you want to present:
+First create the global keys and name them accordingly to where you are going to use them:
 ```
 final keyMenu = GlobalKey();
 final keyContainer = GlobalKey();
 final keyChat = GlobalKey();  
 ```
 
-Then create a list of TutorialItens
+Then create a list of TutorialItems
 
 ```
-List<TutorialItens> itens = [];
+List<TutorialItems> itens = [];
 @override
   void initState() {
     itens.addAll({
-      TutorialItens(
+      TutorialItems(
           globalKey: keyMenu,
           touchScreen: true,
           top: 200,
           left: 50,
+          color: Color.fromRGBO(R, G, B, opacity),
           children: [
             Text(
-              "Ali é nosso menu , você consegue ver varias coisas nele",
+              "Tutorial Item 1",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             SizedBox(
@@ -39,21 +40,22 @@ List<TutorialItens> itens = [];
             )
           ],
           widgetNext: Text(
-            "Toque para continuar",
+            "Next",
             style: TextStyle(
               color: Colors.purple,
               fontWeight: FontWeight.bold,
             ),
           ),
           shapeFocus: ShapeFocus.oval),
-      TutorialItens(
+      TutorialItems(
         globalKey: keyChat,
         touchScreen: true,
         top: 200,
         left: 50,
+        color: Color.fromRGBO(R, G, B, opacity),
         children: [
           Text(
-            "Qualquer duvida que aparecer , entre no nosso chat , estamos prontos para ajudar",
+            "Tutorial Item 2",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           SizedBox(
@@ -61,7 +63,7 @@ List<TutorialItens> itens = [];
           )
         ],
         widgetNext: Text(
-          "Toque para continuar",
+          "Next",
           style: TextStyle(
             color: Colors.purple,
             fontWeight: FontWeight.bold,
@@ -69,14 +71,15 @@ List<TutorialItens> itens = [];
         ),
         shapeFocus: ShapeFocus.oval,
       ),
-      TutorialItens(
+      TutorialItems(
         globalKey: keyContainer,
         touchScreen: true,
         bottom: 50,
         left: 50,
+        color: Color.fromRGBO(R, G, B, opacity),
         children: [
           Text(
-            "Nessa sessão você vai ter acesso a todas as  Rasteirinhas",
+            "Tutorial Item 3",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           SizedBox(
@@ -84,7 +87,7 @@ List<TutorialItens> itens = [];
           )
         ],
         widgetNext: Text(
-          "Sair",
+          "Finish",
           style: TextStyle(
             color: Colors.purple,
             fontWeight: FontWeight.bold,
@@ -97,8 +100,9 @@ List<TutorialItens> itens = [];
   }
 ```
 
- #### In it we have TutorialItens, is where is the entire tutorial part of your application.
-**TutorialItens**
+ #### In it we have TutorialItems, is where is the entire tutorial part of your application.
+
+**TutorialItems**
   - **globalKey**  - The Global Key of the component you want to focus on
   - **touchScreen** - Sets whether to move to the next tutorial items by clicking anywhere on the screen
   - **children** - List of widgets to compose the screen
@@ -107,12 +111,9 @@ List<TutorialItens> itens = [];
   - Can be aligned on the screen as well as positioned using **(top, bottom, left, right)**
 
 **Tutorial.show(context,itens)**
-show() -   the show () method, receives two parameters, the context and the list of TutorialItens you created
+show() -   the show () method, receives two parameters, the context and the list of TutorialItems you created
 Now just run the Tutorial.show(context, itens)
 
 ```
 Tutorial.showTutorial(context, itens);
 ```
-
-# Good job now is so use.
- 

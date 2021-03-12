@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial/src/models/shape_models.dart';
 
-class TutorialItens {
+class TutorialItems {
   final GlobalKey globalKey;
   final ShapeFocus shapeFocus;
   final List<Widget> children;
@@ -10,11 +10,12 @@ class TutorialItens {
   final double left;
   final double right;
   final Widget widgetNext;
+  final Color color;
   final CrossAxisAlignment crossAxisAlignment;
   final MainAxisAlignment mainAxisAlignment;
   final bool touchScreen;
 
-  TutorialItens({
+  TutorialItems({
     this.top,
     this.bottom,
     this.left,
@@ -25,6 +26,7 @@ class TutorialItens {
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.widgetNext,
+    this.color,
     this.touchScreen = false,
   });
 }

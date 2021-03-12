@@ -1,1 +1,1 @@
-enum ShapeFocus { oval, square }
+enum ShapeFocus { oval, square, roundedSquare }

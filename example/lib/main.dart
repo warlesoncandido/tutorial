@@ -30,16 +30,17 @@ class _HomeState extends State<Home> {
   var keyContainer = GlobalKey();
   var keyChat = GlobalKey();
 
-  List<TutorialItens> itens = [];
+  List<TutorialItems> itens = [];
 
   @override
   void initState() {
     itens.addAll({
-      TutorialItens(
+      TutorialItems(
           globalKey: keyMenu,
           touchScreen: true,
           top: 200,
           left: 50,
+          color: Color.fromRGBO(0, 179, 104, 0.6),
           children: [
             Text(
               "Ali é nosso menu , você consegue ver varias coisas nele",
@@ -56,16 +57,17 @@ class _HomeState extends State<Home> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          shapeFocus: ShapeFocus.oval),
-      TutorialItens(
+          shapeFocus: ShapeFocus.roundedSquare),
+      TutorialItems(
         globalKey: keyChat,
         touchScreen: true,
         top: 200,
         left: 50,
+        color: Color.fromRGBO(0, 179, 104, 0.6),
         children: [
           Text(
             "Qualquer duvida que aparecer , entre no nosso chat , estamos prontos para ajudar",
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           ),
           SizedBox(
             height: 100,
@@ -78,13 +80,14 @@ class _HomeState extends State<Home> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        shapeFocus: ShapeFocus.oval,
+        shapeFocus: ShapeFocus.roundedSquare,
       ),
-      TutorialItens(
+      TutorialItems(
         globalKey: keyContainer,
         touchScreen: true,
         bottom: 50,
         left: 50,
+        color: Color.fromRGBO(0, 179, 104, 0.6),
         children: [
           Text(
             "Nessa sessão você vai ter acesso a todas as  Rasteirinhas",
@@ -133,7 +136,7 @@ class _HomeState extends State<Home> {
           Container(
             key: keyChat,
             margin: EdgeInsets.symmetric(horizontal: 5),
-            width: 40,
+            width: 100,
             height: 40,
             decoration: BoxDecoration(
               color: Colors.black,
