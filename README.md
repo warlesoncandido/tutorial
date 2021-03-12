@@ -10,7 +10,31 @@
 
 ## Usage
 
-First create the global keys and name them accordingly to where you are going to use them:
+Import the package into your `pubspec.yaml`
+
+```
+dependencies:
+  tutorial:
+```
+
+If you are using aikenahac's fork:
+
+```
+dependencies:
+  tutorial:
+    git: 
+      url: https://github.com/aikenahac/tutorial.git
+      ref: master
+```
+
+Then import the library into the file you want:
+
+```
+import 'package:tutorial/tutorial.dart'
+```
+
+Then create the global keys and name them accordingly to where you are going to use them:
+
 ```
 final keyMenu = GlobalKey();
 final keyContainer = GlobalKey();
@@ -46,7 +70,7 @@ List<TutorialItems> itens = [];
               fontWeight: FontWeight.bold,
             ),
           ),
-          shapeFocus: ShapeFocus.oval),
+          shapeFocus: ShapeFocus.roundedSquare),
       TutorialItems(
         globalKey: keyChat,
         touchScreen: true,
@@ -100,17 +124,18 @@ List<TutorialItems> itens = [];
   }
 ```
 
- #### In it we have TutorialItems, is where is the entire tutorial part of your application.
+#### Properties:
 
 **TutorialItems**
   - **globalKey**  - The Global Key of the component you want to focus on
   - **touchScreen** - Sets whether to move to the next tutorial items by clicking anywhere on the screen
   - **children** - List of widgets to compose the screen
   - **widgetNext** - A component to move to the next item, if touchScreen is equal to false, the click will be only on that component
-  - **shapeFocus** -Focus shape can be chosen using **shapeFocus.oval** or **ShapeFocus.square**
+  - **shapeFocus** -Focus shape can be chosen using **shapeFocus.oval**, **ShapeFocus.square** or **ShapeFocus.roundedSquare**
   - Can be aligned on the screen as well as positioned using **(top, bottom, left, right)**
 
 **Tutorial.show(context,itens)**
+
 show() -   the show () method, receives two parameters, the context and the list of TutorialItems you created
 Now just run the Tutorial.show(context, itens)
 
