@@ -1,11 +1,11 @@
 # Tutorial
 
-<img src="https://user-images.githubusercontent.com/47983071/105987554-30276a00-607d-11eb-9f0f-69acfad9e8f8.jpeg" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/aikenahac/tutorial/master/images/circleExample.jpeg" alt="roundedRectangle" width="200"/>
 
 <img src="https://user-images.githubusercontent.com/47983071/105987620-4cc3a200-607d-11eb-958c-a5645bba87fb.jpeg" alt="drawing" width="200"/>
 
 
-<img src="https://user-images.githubusercontent.com/47983071/105987668-5a792780-607d-11eb-9d74-6bd190c0aad2.jpeg" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/aikenahac/tutorial/master/images/squareExample.jpeg" alt="squareExample" width="200"/>
 
 
 ## Usage
