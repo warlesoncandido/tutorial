@@ -7,6 +7,7 @@ class HolePainter extends CustomPainter {
   final double width;
   final double height;
   final Color color;
+  final Radius borderRadius;
   final ShapeFocus shapeFocus;
 
   HolePainter({
@@ -15,6 +16,7 @@ class HolePainter extends CustomPainter {
     this.width,
     this.height,
     this.color,
+    this.borderRadius,
     this.shapeFocus = ShapeFocus.oval,
   });
 
@@ -40,10 +42,10 @@ class HolePainter extends CustomPainter {
             ..addRRect(
               RRect.fromRectAndCorners(Rect.fromLTWH(
                 dx - (width / 2), dy - (height / 2), width, height),
-                topRight: Radius.circular(25.0),
-                topLeft: Radius.circular(25.0),
-                bottomRight: Radius.circular(25.0),
-                bottomLeft: Radius.circular(25.0),
+                topRight: borderRadius,
+                topLeft: borderRadius,
+                bottomRight: borderRadius,
+                bottomLeft: borderRadius,
               )
             )
             ..close(),

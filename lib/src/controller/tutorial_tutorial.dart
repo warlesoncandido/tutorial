@@ -39,7 +39,8 @@ class Tutorial {
                           dy: offset.dy + (sizeWidget.height / 2),
                           width: sizeWidget.width,
                           height: sizeWidget.height,
-                          color: element.color
+                          color: element.color,
+                          borderRadius: element.borderRadius
                       ),
                     ),
                     Positioned(

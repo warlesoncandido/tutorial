@@ -57,13 +57,14 @@ class _HomeState extends State<Home> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          shapeFocus: ShapeFocus.roundedSquare),
+          shapeFocus: ShapeFocus.oval),
       TutorialItems(
         globalKey: keyChat,
         touchScreen: true,
         top: 200,
         left: 50,
         color: Color.fromRGBO(0, 179, 104, 0.6),
+        borderRadius: Radius.circular(25.0),
         children: [
           Text(
             "Qualquer duvida que aparecer , entre no nosso chat , estamos prontos para ajudar",

@@ -53,6 +53,7 @@ List<TutorialItems> itens = [];
           touchScreen: true,
           top: 200,
           left: 50,
+          borderRadius: Radius.circular(15.0), // NEEDED ON  ShapeFocus.roundedSquare !!!
           color: Color.fromRGBO(R, G, B, opacity),
           children: [
             Text(

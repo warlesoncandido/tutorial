@@ -11,6 +11,7 @@ class TutorialItems {
   final double right;
   final Widget widgetNext;
   final Color color;
+  final Radius borderRadius;
   final CrossAxisAlignment crossAxisAlignment;
   final MainAxisAlignment mainAxisAlignment;
   final bool touchScreen;
@@ -27,6 +28,7 @@ class TutorialItems {
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.widgetNext,
     this.color,
+    this.borderRadius,
     this.touchScreen = false,
   });
 }
