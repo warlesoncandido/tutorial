@@ -28,3 +28,7 @@
 ## [0.0.7] - Readme.
 
 * Arrumando exemplo e readme
+
+## [0.0.8] - Readme.
+
+* Migrado para Null Safety

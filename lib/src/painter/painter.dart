@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:tutorial/src/models/shape_models.dart';
 
 class HolePainter extends CustomPainter {
-  final double dx;
-  final double dy;
-  final double width;
-  final double height;
-  final ShapeFocus shapeFocus;
+  final double? dx;
+  final double? dy;
+  final double? width;
+  final double? height;
+  final ShapeFocus? shapeFocus;
 
   HolePainter({
     this.dx,
@@ -24,7 +24,8 @@ class HolePainter extends CustomPainter {
             PathOperation.difference,
             Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height)),
             Path()
-              ..addOval(Rect.fromCircle(center: Offset(dx, dy), radius: width))
+              ..addOval(
+                  Rect.fromCircle(center: Offset(dx!, dy!), radius: width!))
               ..close(),
           ),
           paint);
@@ -35,7 +36,7 @@ class HolePainter extends CustomPainter {
             Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height)),
             Path()
               ..addRect(Rect.fromLTWH(
-                  dx - (width / 2), dy - (height / 2), width, height))
+                  dx! - (width! / 2), dy! - (height! / 2), width!, height!))
               ..close(),
           ),
           paint);

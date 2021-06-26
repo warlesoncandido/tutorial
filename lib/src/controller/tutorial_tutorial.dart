@@ -9,7 +9,7 @@ class Tutorial {
       BuildContext context, List<TutorialItens> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
-    OverlayState overlayState = Overlay.of(context);
+    OverlayState? overlayState = Overlay.of(context);
     List<OverlayEntry> entrys = [];
     children.forEach((element) async {
       var offset = _capturePositionWidget(element.globalKey);
@@ -23,7 +23,7 @@ class Tutorial {
                       entrys[count].remove();
                       count++;
                       if (count != entrys.length) {
-                        overlayState.insert(entrys[count]);
+                        overlayState?.insert(entrys[count]);
                       }
                     }
                   : () {},
@@ -51,7 +51,7 @@ class Tutorial {
                           crossAxisAlignment: element.crossAxisAlignment,
                           mainAxisAlignment: element.mainAxisAlignment,
                           children: [
-                            ...element.children,
+                            ...element.children!,
                             GestureDetector(
                               child: element.widgetNext ??
                                   Text(
@@ -62,7 +62,7 @@ class Tutorial {
                                 entrys[count].remove();
                                 count++;
                                 if (count != entrys.length) {
-                                  overlayState.insert(entrys[count]);
+                                  overlayState?.insert(entrys[count]);
                                 }
                               },
                             ),
@@ -79,17 +79,19 @@ class Tutorial {
       );
     });
 
-    overlayState.insert(entrys[0]);
+    overlayState?.insert(entrys[0]);
   }
 
-  static Offset _capturePositionWidget(GlobalKey key) {
-    RenderBox renderPosition = key.currentContext.findRenderObject();
+  static Offset _capturePositionWidget(GlobalKey? key) {
+    RenderBox? renderPosition =
+        key!.currentContext!.findRenderObject() as RenderBox;
 
     return renderPosition.localToGlobal(Offset.zero);
   }
 
-  static Size _getSizeWidget(GlobalKey key) {
-    RenderBox renderSize = key.currentContext.findRenderObject();
+  static Size _getSizeWidget(GlobalKey? key) {
+    RenderBox? renderSize =
+        key!.currentContext?.findRenderObject() as RenderBox;
     return renderSize.size;
   }
 }
