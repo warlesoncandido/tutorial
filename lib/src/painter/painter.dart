@@ -6,6 +6,7 @@ class HolePainter extends CustomPainter {
   final double dy;
   final double width;
   final double height;
+  final double radius;
   final ShapeFocus shapeFocus;
 
   HolePainter({
@@ -13,8 +14,10 @@ class HolePainter extends CustomPainter {
     this.dy,
     this.width,
     this.height,
+    this.radius = 20,
     this.shapeFocus = ShapeFocus.oval,
   });
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()..color = Color.fromRGBO(0, 0, 0, 0.8);
@@ -34,8 +37,8 @@ class HolePainter extends CustomPainter {
             PathOperation.difference,
             Path()..addRect(Rect.fromLTWH(0, 0, size.width, size.height)),
             Path()
-              ..addRect(Rect.fromLTWH(
-                  dx - (width / 2), dy - (height / 2), width, height))
+              ..addRRect(RRect.fromRectAndRadius(
+                  Rect.fromLTWH(dx - (width / 2), dy - (height / 2), width, height), Radius.circular(this.radius)))
               ..close(),
           ),
           paint);

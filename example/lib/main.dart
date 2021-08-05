@@ -34,12 +34,23 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
+    Future.delayed(Duration(microseconds: 200)).then((value) {
+      showTutorial();
+    });
+
+    super.initState();
+  }
+
+  void showTutorial() {
+    itens.clear();
     itens.addAll({
       TutorialItens(
           globalKey: keyMenu,
           touchScreen: true,
           top: 200,
           left: 50,
+          width: 20,
+          height: 20,
           children: [
             Text(
               "Ali é nosso menu , você consegue ver varias coisas nele",
@@ -104,11 +115,23 @@ class _HomeState extends State<Home> {
         shapeFocus: ShapeFocus.square,
       ),
     });
-    Future.delayed(Duration(microseconds: 200)).then((value) {
-      Tutorial.showTutorial(context, itens);
-    });
 
-    super.initState();
+    Tutorial.showTutorial(
+        context,
+        itens,
+        Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            margin: EdgeInsets.only(top: 100),
+            child: Text(
+              "PULAR",
+              style: TextStyle(
+                color: Colors.purple,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ));
   }
 
   @override
@@ -158,13 +181,15 @@ class _HomeState extends State<Home> {
             mainAxisSpacing: 2,
             itemBuilder: (BuildContext context, int index) => new Container(
               key: index == 0 ? keyContainer : null,
-              child: Image.asset(
-                list[index]["url"],
-                fit: BoxFit.cover,
+              child: InkWell(
+                onTap: () => showTutorial(),
+                child: Image.asset(
+                  list[index]["url"],
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-            staggeredTileBuilder: (int index) =>
-                new StaggeredTile.count(list[index]["x"], list[index]["y"]),
+            staggeredTileBuilder: (int index) => new StaggeredTile.count(list[index]["x"], list[index]["y"]),
           )
         ],
       ),

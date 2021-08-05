@@ -9,6 +9,9 @@ class TutorialItens {
   final double bottom;
   final double left;
   final double right;
+  final int radius;
+  final double width;
+  final double height;
   final Widget widgetNext;
   final CrossAxisAlignment crossAxisAlignment;
   final MainAxisAlignment mainAxisAlignment;
@@ -19,6 +22,9 @@ class TutorialItens {
     this.bottom,
     this.left,
     this.right,
+    this.radius,
+    this.width,
+    this.height,
     this.globalKey,
     this.children,
     this.shapeFocus,
