@@ -48,7 +48,7 @@ class Tutorial {
                           dy: offset.dy + (sizeWidget.height / 2),
                           width: w,
                           height: h,
-                          radius: element.radius),
+                          radius: element.radius ?? 0),
                     ),
                     Positioned(
                       top: element.top,
