@@ -31,7 +31,6 @@ class Tutorial {
       entrys.add(
         OverlayEntry(
           builder: (context) {
-
             var w = element.width == null ? sizeWidget.width : element.width;
             var h = element.height == null ? sizeWidget.height : element.height;
 
@@ -48,7 +47,8 @@ class Tutorial {
                           dx: offset.dx + (sizeWidget.width / 2),
                           dy: offset.dy + (sizeWidget.height / 2),
                           width: w,
-                          height: h),
+                          height: h,
+                          radius: element.radius),
                     ),
                     Positioned(
                       top: element.top,

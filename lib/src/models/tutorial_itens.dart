@@ -9,7 +9,7 @@ class TutorialItens {
   final double bottom;
   final double left;
   final double right;
-  final int radius;
+  final double radius;
   final double width;
   final double height;
   final Widget widgetNext;
