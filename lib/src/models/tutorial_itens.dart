@@ -13,24 +13,25 @@ class TutorialItens {
   final double width;
   final double height;
   final Widget widgetNext;
+  final Widget widgetSkip;
   final CrossAxisAlignment crossAxisAlignment;
   final MainAxisAlignment mainAxisAlignment;
   final bool touchScreen;
 
-  TutorialItens({
-    this.top,
-    this.bottom,
-    this.left,
-    this.right,
-    this.radius,
-    this.width,
-    this.height,
-    this.globalKey,
-    this.children,
-    this.shapeFocus,
-    this.crossAxisAlignment = CrossAxisAlignment.center,
-    this.mainAxisAlignment = MainAxisAlignment.center,
-    this.widgetNext,
-    this.touchScreen = false,
-  });
+  TutorialItens(
+      {this.top,
+      this.bottom,
+      this.left,
+      this.right,
+      this.radius,
+      this.width,
+      this.height,
+      this.globalKey,
+      this.children,
+      this.shapeFocus,
+      this.crossAxisAlignment = CrossAxisAlignment.center,
+      this.mainAxisAlignment = MainAxisAlignment.center,
+      this.widgetNext,
+      this.touchScreen = false,
+      this.widgetSkip});
 }

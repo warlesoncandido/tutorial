@@ -5,7 +5,7 @@ import 'package:tutorial/src/models/tutorial_itens.dart';
 import 'package:tutorial/src/painter/painter.dart';
 
 class Tutorial {
-  static showTutorial(BuildContext context, List<TutorialItens> children, Widget skipWidget) async {
+  static showTutorial(BuildContext context, List<TutorialItens> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
     OverlayState overlayState = Overlay.of(context);
@@ -71,10 +71,10 @@ class Tutorial {
                         ),
                       ),
                     ),
-                    if (skipWidget != null)
+                    if (element.widgetSkip != null)
                       GestureDetector(
                         onTap: () => dismiss(),
-                        child: skipWidget,
+                        child: element.widgetSkip,
                       )
                   ],
                 ),

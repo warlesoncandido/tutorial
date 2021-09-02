@@ -67,6 +67,19 @@ class _HomeState extends State<Home> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          widgetSkip: Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              margin: EdgeInsets.only(top: 100),
+              child: Text(
+                "PULAR",
+                style: TextStyle(
+                  color: Colors.purple,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
           shapeFocus: ShapeFocus.oval),
       TutorialItens(
         globalKey: keyChat,
@@ -118,20 +131,7 @@ class _HomeState extends State<Home> {
 
     Tutorial.showTutorial(
         context,
-        itens,
-        Align(
-          alignment: Alignment.topCenter,
-          child: Container(
-            margin: EdgeInsets.only(top: 100),
-            child: Text(
-              "PULAR",
-              style: TextStyle(
-                color: Colors.purple,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ));
+        itens);
   }
 
   @override
