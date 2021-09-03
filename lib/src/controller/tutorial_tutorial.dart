@@ -62,15 +62,15 @@ class Tutorial {
                           mainAxisAlignment: element.mainAxisAlignment,
                           children: [
                             ...element.children,
-                            if (element.widgetNext != null)
-                              GestureDetector(
-                                child: element.widgetNext,
-                                onTap: () => onNext(),
-                              ),
                           ],
                         ),
                       ),
                     ),
+                    if (element.widgetNext != null)
+                      GestureDetector(
+                        onTap: () => onNext(),
+                        child: element.widgetNext,
+                      ),
                     if (element.widgetSkip != null)
                       GestureDetector(
                         onTap: () => dismiss(),
