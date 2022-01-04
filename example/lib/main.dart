@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:tutorial/tutorial.dart';
 
 main() {
@@ -174,7 +173,7 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           Background(),
-          StaggeredGridView.countBuilder(
+          /*StaggeredGridView.countBuilder(
             crossAxisCount: 2,
             itemCount: list.length,
             crossAxisSpacing: 2,
@@ -190,7 +189,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             staggeredTileBuilder: (int index) => new StaggeredTile.count(list[index]["x"], list[index]["y"]),
-          )
+          )*/
         ],
       ),
       drawer: Drawer(),
