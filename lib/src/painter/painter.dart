@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial/src/models/shape_models.dart';
 
+//CLASSE ONDE  E MONTADO O PAINTER.
 class HolePainter extends CustomPainter {
   final double? dx;
   final double? dy;

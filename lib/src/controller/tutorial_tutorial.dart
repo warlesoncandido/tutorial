@@ -5,8 +5,8 @@ import 'package:tutorial/src/models/tutorial_itens.dart';
 import 'package:tutorial/src/painter/painter.dart';
 
 class Tutorial {
-  static showTutorial(
-      BuildContext context, List<TutorialItens> children) async {
+  //FUNÇÃO QUE EXIBE O TUTORIAL
+  static showTutorial(BuildContext context, List<TutorialItem> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
     OverlayState? overlayState = Overlay.of(context);
@@ -82,12 +82,15 @@ class Tutorial {
     overlayState?.insert(entrys[0]);
   }
 
+  //FUNÇÃO PARA CAPTURAR A POSIÇÃO DO COMPONENTE
   static Offset _capturePositionWidget(GlobalKey? key) {
     RenderBox? renderPosition =
         key!.currentContext!.findRenderObject() as RenderBox;
 
     return renderPosition.localToGlobal(Offset.zero);
   }
+
+  //FUNÇÃO PARA CAPTURAR AO TAMANHO DO COMPONENTE
 
   static Size _getSizeWidget(GlobalKey? key) {
     RenderBox? renderSize =

@@ -32,3 +32,7 @@
 ## [0.0.8] - Readme.
 
 * Migrado para Null Safety
+
+## [1.0.9] - Readme.
+
+* Correção de Null Safety.

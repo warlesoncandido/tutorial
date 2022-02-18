@@ -1,6 +1,6 @@
 name: tutorial
-description: Tutorial package.
-version: 1.0.8
+description: THE BEST AND SIMPLE THE TUTORIAL OVERLAY .
+version: 1.0.9
 homepage: https://github.com/warlesoncandido
 
 environment:
@@ -8,7 +8,6 @@ environment:
   flutter: ">=1.17.0 <2.0.0"
 
 dependencies:
-  flutter_staggered_grid_view: ^0.3.3
   flutter:
     sdk: flutter
 

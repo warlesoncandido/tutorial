@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial/src/models/shape_models.dart';
 
-class TutorialItens {
+//CLASSE MODELO  DOS ITENS QUE SERÃO EXIBIDOS NO TUTORIAL
+class TutorialItem {
   final GlobalKey? globalKey;
   final ShapeFocus? shapeFocus;
   final List<Widget>? children;
@@ -14,7 +15,7 @@ class TutorialItens {
   final MainAxisAlignment mainAxisAlignment;
   final bool? touchScreen;
 
-  TutorialItens({
+  TutorialItem({
     this.top,
     this.bottom,
     this.left,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:tutorial/tutorial.dart';
 
 main() {
@@ -26,16 +25,19 @@ class _HomeState extends State<Home> {
     {"url": "assets/images/rasteirinha.jpg", "x": 1, "y": 1}
   ];
 
+//Crie suas global keys e adicione aos componentes que deverão ser
+//localizados e exibidos.
   var keyMenu = GlobalKey();
   var keyContainer = GlobalKey();
   var keyChat = GlobalKey();
 
-  List<TutorialItens> itens = [];
+  List<TutorialItem> itens = [];
 
+  //Iniciando o estado.
   @override
   void initState() {
     itens.addAll({
-      TutorialItens(
+      TutorialItem(
           globalKey: keyMenu,
           touchScreen: true,
           top: 200,
@@ -57,7 +59,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           shapeFocus: ShapeFocus.oval),
-      TutorialItens(
+      TutorialItem(
         globalKey: keyChat,
         touchScreen: true,
         top: 200,
@@ -80,7 +82,7 @@ class _HomeState extends State<Home> {
         ),
         shapeFocus: ShapeFocus.oval,
       ),
-      TutorialItens(
+      TutorialItem(
         globalKey: keyContainer,
         touchScreen: true,
         bottom: 50,
@@ -104,6 +106,8 @@ class _HomeState extends State<Home> {
         shapeFocus: ShapeFocus.square,
       ),
     });
+
+    ///FUNÇÃO QUE EXIBE O TUTORIAL.
     Future.delayed(Duration(microseconds: 200)).then((value) {
       Tutorial.showTutorial(context, itens);
     });
@@ -148,26 +152,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: Stack(
-        children: [
-          Background(),
-          StaggeredGridView.countBuilder(
-            crossAxisCount: 2,
-            itemCount: list.length,
-            crossAxisSpacing: 2,
-            mainAxisSpacing: 2,
-            itemBuilder: (BuildContext context, int index) => new Container(
-              key: index == 0 ? keyContainer : null,
-              child: Image.asset(
-                list[index]["url"],
-                fit: BoxFit.cover,
-              ),
-            ),
-            staggeredTileBuilder: (int index) =>
-                new StaggeredTile.count(list[index]["x"], list[index]["y"]),
-          )
-        ],
-      ),
+      body: Container(),
       drawer: Drawer(),
     );
   }
