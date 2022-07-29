@@ -1,11 +1,11 @@
 library tutorial;
 
 import 'package:flutter/material.dart';
-import 'package:tutorial/src/models/tutorial_itens.dart';
+import 'package:tutorial/src/models/tutorial_items.dart';
 import 'package:tutorial/src/painter/painter.dart';
 
 class Tutorial {
-  static showTutorial(BuildContext context, List<TutorialItens> children) async {
+  static showTutorial(BuildContext context, List<TutorialItems> children) async {
     int count = 0;
     var size = MediaQuery.of(context).size;
     OverlayState overlayState = Overlay.of(context)!;
@@ -40,15 +40,23 @@ class Tutorial {
                 backgroundColor: Colors.transparent,
                 body: Stack(
                   children: [
-                    CustomPaint(
-                      size: size,
-                      painter: HolePainter(
-                          shapeFocus: element.shapeFocus,
-                          dx: offset.dx + (sizeWidget.width / 2),
-                          dy: offset.dy + (sizeWidget.height / 2),
-                          width: w,
-                          height: h,
-                          radius: element.radius ?? 0),
+                    InkWell(
+                      onTap: () {
+                        if (element.onTap != null) {
+                          entrys[count].remove();
+                          element.onTap!();
+                        }
+                      },
+                      child: CustomPaint(
+                        size: size,
+                        painter: HolePainter(
+                            shapeFocus: element.shapeFocus,
+                            dx: offset.dx + (sizeWidget.width / 2),
+                            dy: offset.dy + (sizeWidget.height / 2),
+                            width: w,
+                            height: h,
+                            radius: element.radius ?? 0),
+                      ),
                     ),
                     Positioned(
                       top: element.top,

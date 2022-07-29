@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
   var keyContainer = GlobalKey();
   var keyChat = GlobalKey();
 
-  List<TutorialItens> itens = [];
+  List<TutorialItems> items = [];
 
   @override
   void initState() {
@@ -41,9 +41,12 @@ class _HomeState extends State<Home> {
   }
 
   void showTutorial() {
-    itens.clear();
-    itens.addAll({
-      TutorialItens(
+    items.clear();
+    items.addAll({
+      TutorialItems(
+          onTap: () {
+            print('Click Works');
+          },
           globalKey: keyMenu,
           touchScreen: true,
           top: 200,
@@ -80,7 +83,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           shapeFocus: ShapeFocus.oval),
-      TutorialItens(
+      TutorialItems(
         globalKey: keyChat,
         touchScreen: true,
         top: 200,
@@ -103,7 +106,7 @@ class _HomeState extends State<Home> {
         ),
         shapeFocus: ShapeFocus.oval,
       ),
-      TutorialItens(
+      TutorialItems(
         globalKey: keyContainer,
         touchScreen: true,
         bottom: 50,
@@ -128,9 +131,7 @@ class _HomeState extends State<Home> {
       ),
     });
 
-    Tutorial.showTutorial(
-        context,
-        itens);
+    Tutorial.showTutorial(context, items);
   }
 
   @override
